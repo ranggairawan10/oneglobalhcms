@@ -454,6 +454,15 @@
     /* ============================================
        SECTION
        ============================================ */
+    /* Anchor target untuk language-toggled h3 sections */
+    .anchor-target {
+      display: block;
+      visibility: hidden;
+      height: 0;
+      scroll-margin-top: calc(var(--header-height) + 16px);
+      pointer-events: none;
+    }
+
     section.module-section {
       padding: var(--space-7) 0;
       scroll-margin-top: calc(var(--header-height) + 16px);
@@ -1896,7 +1905,8 @@
             </div>
           </div>
 
-          <h3 class="section-h3" id="eca-fitur" data-lang-id="">Fitur Utama (16 Functional Requirements)</h3>
+          <span id="eca-fitur" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Fitur Utama (16 Functional Requirements)</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Key Features (16 Functional Requirements)</h3>
           <div data-lang-id="">
             <p>Modul ECA punya 16 Functional Requirements yang dikelompokkan dalam 5 kategori. Klik tiap kategori untuk lihat detail FR-nya.</p>
@@ -2001,13 +2011,26 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <p>The ECA module has 16 Functional Requirements grouped into 5 categories. Click each category to see FR details.</p>
+            <p>The ECA module has 16 Functional Requirements grouped into 5 categories. The structure is the same as the Indonesian view above, with identical FR codes.</p>
+
+            <div class="card">
+              <h4 class="section-h4">5 Categories of 16 FRs</h4>
+              <ol class="content-list">
+                <li><strong>HC AI Intelligent Data Management (5 FRs).</strong> Conversational data updates, continuous validation, OCR document extraction, audit trail, anomaly detection.</li>
+                <li><strong>Master Data Management (3 FRs).</strong> Employee profile (250+ fields, 11 categories), dependents, contracts (PKWT/PKWTT for Indonesia, country-specific for others).</li>
+                <li><strong>Organization Structure (4 FRs).</strong> Position management, reporting line, cost center sync to SAP, lifecycle events (hire/transfer/promotion/termination).</li>
+                <li><strong>Multi-Country Compliance (3 FRs).</strong> Country-specific statutory data (BPJS Indonesia, EPF Malaysia, social insurance China, etc.), labor law mapping, EOR handling.</li>
+                <li><strong>ESS Integration Layer (1 FR).</strong> Personal Information Management with tiered access: Direct edit (address, email, mobile, photo), Approval required (bank, name, marital, dependents), Read-only (employee ID, legal name, hire date, salary).</li>
+              </ol>
+            </div>
+
             <div class="card card-quiet">
-              <p style="font-style:italic;color:var(--color-gray-text);">English version uses identical structure with the same FR codes. Switch to Indonesian for full descriptions, or contact the project team for English translation copy.</p>
+              <p><strong>Note:</strong> Detailed FR-by-FR descriptions are listed in Indonesian view above. The original Indonesian PRD documents on Google Drive contain full FR specifications with Acceptance Criteria.</p>
             </div>
           </div>
 
-          <h3 class="section-h3" id="eca-workflow" data-lang-id="">Detailed Workflow</h3>
+          <span id="eca-workflow" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Detailed Workflow</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Detailed Workflow</h3>
           <div data-lang-id="">
             <p>Workflow ECA terbagi dalam 6 sections berisi 13 sub-workflow. Setiap workflow punya struktur sama: User Story, Process steps, Input, Output, Data Source. Untuk admin ECA, fokus pada lifecycle events (Section 2) dan Data Quality Governance (Section 5).</p>
@@ -2119,7 +2142,8 @@
             </div>
           </div>
 
-          <h3 class="section-h3" id="eca-persiapan" data-lang-id="">Persiapan Admin</h3>
+          <span id="eca-persiapan" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Persiapan Admin</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Admin Preparation</h3>
           <div data-lang-id="">
             <p>Sebelum go-live Wave 1 (Oktober 2026), Kristi perlu menyelesaikan checklist berikut. Item dikelompokkan dalam 4 kategori sesuai prioritas.</p>
@@ -2176,7 +2200,8 @@
             </div>
           </div>
 
-          <h3 class="section-h3" id="eca-faq-user" data-lang-id="">FAQ dari Karyawan ke Admin ECA</h3>
+          <span id="eca-faq-user" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">FAQ dari Karyawan ke Admin ECA</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">FAQ from Employees to ECA Admin</h3>
           <div data-lang-id="">
             <p>15 pertanyaan paling sering muncul dari karyawan ke admin ECA. Anda tidak perlu hafal jawaban, tapi tahu jalurnya: apakah Anda jawab langsung, atau eskalasi ke siapa.</p>
@@ -2323,7 +2348,8 @@
             </div>
           </div>
 
-          <h3 class="section-h3" id="eca-faq-hc" data-lang-id="">FAQ dari HC Function lain</h3>
+          <span id="eca-faq-hc" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">FAQ dari HC Function lain</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">FAQ from Other HC Functions</h3>
           <div data-lang-id="">
             <p>10 pertanyaan paling sering muncul dari HC function lain (Comp&Ben, Talent Acquisition, OD, IR) ke admin ECA.</p>
@@ -2371,10 +2397,73 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full FAQ list.</p></div>
+            <p>16 Functional Requirements grouped into 5 categories. Memorize the 4-character codes (DATA, RAYA, MASTER, MULTI, ESS) since they appear repeatedly across PRDs, design discussions, and vendor sprint demos.</p>
+
+            <h4 class="section-h4">A. HC AI Data Management (5 FRs)</h4>
+            <table class="data-table">
+              <thead><tr><th>Code</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FR-ECA-DATA-001</strong></td><td>Conversational data updates: employees update via voice/text in 8+ languages</td></tr>
+                <tr><td><strong>FR-ECA-DATA-002</strong></td><td>Smart data validation with HC AI: anomaly detection, format validation</td></tr>
+                <tr><td><strong>FR-ECA-DATA-003</strong></td><td>Document OCR &amp; auto-extraction: KTP, Passport, Bank Statement</td></tr>
+                <tr><td><strong>FR-ECA-DATA-004</strong></td><td>Bulk operations with safety: bulk update with rollback &amp; audit trail</td></tr>
+                <tr><td><strong>FR-ECA-DATA-005</strong></td><td>Multi-modal data input: voice, text, photo, document scan</td></tr>
+              </tbody>
+            </table>
+
+            <h4 class="section-h4">B. HC AI Self-Service for Employees (3 FRs)</h4>
+            <table class="data-table">
+              <thead><tr><th>Code</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FR-ECA-RAYA-001</strong></td><td>Employee profile self-service via HC AI: tier-based access (direct edit / approval required / read-only)</td></tr>
+                <tr><td><strong>FR-ECA-RAYA-002</strong></td><td>Document letter requests via HC AI: salary cert, employment verification, etc.</td></tr>
+                <tr><td><strong>FR-ECA-RAYA-003</strong></td><td>HR FAQ resolution &amp; smart routing to specialists</td></tr>
+              </tbody>
+            </table>
+
+            <h4 class="section-h4">C. Master Data &amp; Compliance (3 FRs)</h4>
+            <table class="data-table">
+              <thead><tr><th>Code</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FR-ECA-MASTER-001</strong></td><td>250+ field employee profile in 11 categories</td></tr>
+                <tr><td><strong>FR-ECA-MASTER-002</strong></td><td>Employment contract management: PKWT, PKWTT, EOR contracts</td></tr>
+                <tr><td><strong>FR-ECA-MASTER-003</strong></td><td>Statutory compliance: BPJS, NPWP, KTP, multi-country variants</td></tr>
+              </tbody>
+            </table>
+
+            <h4 class="section-h4">D. Org Structure (4 FRs)</h4>
+            <table class="data-table">
+              <thead><tr><th>Code</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FR-ECA-ORG-001</strong></td><td>Position management: 800+ positions, span of control monitoring</td></tr>
+                <tr><td><strong>FR-ECA-ORG-002</strong></td><td>Reporting line: solid + dotted line, matrix support</td></tr>
+                <tr><td><strong>FR-ECA-ORG-003</strong></td><td>Cost center allocation: SAP-synced</td></tr>
+                <tr><td><strong>FR-ECA-ORG-004</strong></td><td>Internal transfer workflows with cross-country migration</td></tr>
+              </tbody>
+            </table>
+
+            <h4 class="section-h4">E. Multi-Country &amp; Integration (1 FR)</h4>
+            <table class="data-table">
+              <thead><tr><th>Code</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FR-ECA-MULTI-001</strong></td><td>9-country support: localized fields, statutory contributions, payroll integration</td></tr>
+              </tbody>
+            </table>
+
+            <h4 class="section-h4">F. Cross-Module: ESS Foundation (1 FR)</h4>
+            <table class="data-table">
+              <thead><tr><th>Code</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><strong>FR-ECA-ESS-001</strong></td><td>Tier-based field access for self-service: 3 tiers (direct / approval / read-only)</td></tr>
+              </tbody>
+            </table>
+
+            <p style="margin-top:var(--space-4);"><strong>Total: 16 FR + 4 NFR (Performance, Security, Scalability, Usability).</strong></p>
+          
           </div>
 
-          <h3 class="section-h3" id="eca-faq-bu" data-lang-id="">FAQ dari Business Unit</h3>
+          <span id="eca-faq-bu" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">FAQ dari Business Unit</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">FAQ from Business Units</h3>
           <div data-lang-id="">
             <p>8 pertanyaan dari head of business unit, manager senior, atau staff non-HC yang membutuhkan data ECA.</p>
@@ -2394,10 +2483,32 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full FAQ list.</p></div>
+            <p>15 most frequent employee questions. Most should be resolved by HC AI. The ones reaching Kristi are typically those HC AI cannot handle, or where the employee specifically requests a human.</p>
+
+            <div class="card">
+              <ol class="content-list">
+                <li><strong>"My employee profile shows the wrong birth date, how do I fix it?"</strong> Direct request via ESS, but birth date falls under "approval required" because it affects statutory contributions. Verify with KTP/Passport upload, then HR validates &amp; updates.</li>
+                <li><strong>"I want to add a new dependent (newborn child) for BPJS coverage."</strong> Self-service via ESS, attach birth certificate, auto-routed to BPJS Officer for verification &amp; system update.</li>
+                <li><strong>"My contract is ending next month, will it be renewed?"</strong> Contract status is visible in ESS. For PKWT (fixed-term), HC sends renewal notification 60 days before expiry. Contact your manager &amp; HC if no notification arrives.</li>
+                <li><strong>"I'm getting transferred from Indonesia to Malaysia, what changes for my data?"</strong> Cross-border transfer triggers ECA workflow that includes: contract change, cost center, currency, statutory contributions, leave entitlement, and tax residency. Whole process takes 2-3 weeks.</li>
+                <li><strong>"Why is my photo old in the system, how do I update it?"</strong> Self-service via ESS, upload new photo with auto face-validation. Direct edit, no approval needed.</li>
+                <li><strong>"I lost my employee ID card, how do I request a new one?"</strong> Document Center request in ESS, auto-generate new ID with HR Director e-signature, routing to office admin for printing.</li>
+                <li><strong>"Why isn't my dependent covered by BPJS even though I added them?"</strong> Check: (1) registration data complete, (2) BPJS sync done (typically T+1 to T+5), (3) contribution paid for current period. If sync error, escalate to BPJS Officer.</li>
+                <li><strong>"How do I update bank account for payroll?"</strong> ESS request with bank statement upload. Approval required because of fraud prevention. Process 1-2 days.</li>
+                <li><strong>"I'm getting promoted next month, when does my data update?"</strong> Promotion has effective date. ECA workflow auto-updates: position, grade, salary, reporting line on the effective date. Notification sent 1 week before.</li>
+                <li><strong>"My emergency contact is wrong, how do I change it?"</strong> Self-service direct edit via ESS, no approval needed.</li>
+                <li><strong>"I'm resigning, what's the offboarding process via ECA?"</strong> Resignation triggers offboarding workflow: exit clearance (asset return, financial settlement, knowledge transfer), exit interview, automated termination on last working day. ECA notifies all dependent modules (Comp&amp;Ben, Performance, etc.).</li>
+                <li><strong>"My education data is wrong, I have an additional master's degree."</strong> Self-service ESS, upload diploma/transcript, approval required (since it affects compensation grade).</li>
+                <li><strong>"How do I know my data is correct in the system?"</strong> Recommend self-audit quarterly via ESS - check 11 main categories. If anomaly found, submit correction via ESS.</li>
+                <li><strong>"My driver-employee NIK is registered as a different name in BPJS, conflict?"</strong> Cross-check: (1) ECA NIK vs (2) BPJS database. If conflict, escalate to BPJS Officer with KTP scan.</li>
+                <li><strong>"My pay slip in ESS is different from my colleague's at the same grade. Why?"</strong> Many factors: tenure, allowance, OT, deductions, BPJS class. Pay slip is generated by Comp&amp;Ben from ECA data + Comp&amp;Ben policies. Specific dispute escalates to Comp&amp;Ben.</li>
+              </ol>
+            </div>
+          
           </div>
 
-          <h3 class="section-h3" id="eca-cpo" data-lang-id="">Anticipated Questions dari CPO Frans BS Hutapea</h3>
+          <span id="eca-cpo" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Anticipated Questions dari CPO Frans BS Hutapea</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Anticipated Questions from CPO Frans BS Hutapea</h3>
           <div data-lang-id="">
             <p>Frans BS Hutapea terkenal dengan gaya approval skeptis dan stress-test. Dia tidak akan tanya hal yang sudah jelas. Pertanyaan dia adalah probe untuk lihat apakah Anda paham sistem secara end-to-end, paham angka, dan punya rencana darurat. Berikut 12 pertanyaan yang harus Anda siapkan jawabannya.</p>
@@ -2440,10 +2551,26 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for the full CPO stress-test questions.</p></div>
+            <p>Questions from peer HC functions are usually about data integration coordination or troubleshooting cross-module issues.</p>
+            <div class="card">
+              <ol class="content-list">
+                <li><strong>Comp&amp;Ben team:</strong> "Master data anomaly during payroll calculation, who has the latest view?" ECA has the most current view. Cross-reference issues are handled jointly. Provide timestamp + employee ID for forensic.</li>
+                <li><strong>Talent Acquisition team:</strong> "Why are some new-hire data missing in ECA?" Check FR-ECA-INT-001 Recruitment Pipeline integration. Common gap: incomplete profile from TA before push, or sync delay during recruitment finalization.</li>
+                <li><strong>OD team:</strong> "Org chart in ECA doesn't reflect last week's restructuring." Check refresh cycle, effective date, and whether changes were committed in OD module. ECA syncs from OD.</li>
+                <li><strong>IR team:</strong> "Employee with multiple disciplinary records, how do we mark in ECA?" There's a Special Status field with confidential access. Coordinate with IR Specialist and HR Director only.</li>
+                <li><strong>Performance team:</strong> "Reporting line for 360-feedback is wrong." Cross-check with current org structure in ECA, including dotted-line relationships. Update via ECA, sync auto to Performance Module.</li>
+                <li><strong>LMS team:</strong> "Auto-enrollment to mandatory training failed for some employees." Check ECA data: (1) employee status active, (2) job family classification correct, (3) data complete. If sync issue, ECA-LMS team coordinates.</li>
+                <li><strong>Career team:</strong> "Internal mobility candidate has career history mismatch in ECA vs LinkedIn." ECA is single source of truth for internal records. LinkedIn data is informational only. If formal record needs update, employee submits supporting docs via ECA.</li>
+                <li><strong>Industrial Relations:</strong> "Need data of Muslim employees for Lebaran allowance calculation, ECA can pull?" Yes, religion field exists. But access controlled (privacy). Need formal request with purpose statement, approval HR Director.</li>
+                <li><strong>HR Operations:</strong> "Bulk update for 500 employee contract renewal effective next month, how to do it?" Bulk operations via FR-ECA-DATA-004. Important: validation, approval workflow, audit trail, rollback plan. Don't do bulk update last-minute.</li>
+                <li><strong>People Analytics:</strong> "Need turnover data Q1 by BU and country." ECA has lifecycle event timeline. Can be pulled via report builder or API. Define data points, frequency, and privacy considerations.</li>
+              </ol>
+            </div>
+          
           </div>
 
-          <h3 class="section-h3" id="eca-quiz" data-lang-id="">Self-Check Quiz</h3>
+          <span id="eca-quiz" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Self-Check Quiz</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Self-Check Quiz</h3>
           <div data-lang-id="">
             <p>5 soal untuk cek pemahaman modul ECA. Jawab semua, lalu klik <em>Cek Jawaban</em>. Skor &lt;4 berarti perlu baca ulang sectionnya.</p>
@@ -2498,7 +2625,20 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for the quiz.</p></div>
+            <p>Questions from non-HC business units. Their focus is usually operational data access, financial allocation, or org structure visibility.</p>
+            <div class="card">
+              <ol class="content-list">
+                <li><strong>Finance Director:</strong> "We need real-time cost center allocation breakdown by employee, can ECA give that?" ECA has cost center data + headcount + grade. Aggregated Finance metrics are pulled via API or scheduled report.</li>
+                <li><strong>Operations Director Pabrik:</strong> "Need head-count plan vs actual plan per production line, ECA supports?" Yes, position management has plan vs actual. Definition: plan from OD module, actual from ECA. Dashboard real-time available.</li>
+                <li><strong>BU IT Lead:</strong> "Many BU systems need employee data integration. ECA has API ready?" Yes, REST API + GraphQL for read access. Authentication via SSO. Data scope per role basis. Documentation available in vendor portal.</li>
+                <li><strong>Sales Director:</strong> "Field sales data with sales territory mapping, where does it sit?" Sales territory is in CRM, but reporting line + cost center is in ECA. Integration available, define data fields and refresh cycle.</li>
+                <li><strong>Production Director:</strong> "Real-time line operator headcount per shift, can pull from ECA?" Combine with attendance system. ECA gives headcount roster, attendance system gives actual present. Combined dashboard.</li>
+                <li><strong>BU Logistics:</strong> "Driver employee data with license info, in ECA?" Yes, certifications &amp; licenses are part of 11 categories. Auto-alert before expiry. Compliance tracking.</li>
+                <li><strong>BU Quality:</strong> "Training compliance data per BU per quarter for ISO audit, ECA has this?" ECA has training enrollment + completion via LMS integration. Reports per BU, training type, period auto-generated.</li>
+                <li><strong>BU Marketing:</strong> "Field marketing employee with activity log, how to integrate?" Activity log not in ECA scope (ECA = master data). Activity is in Operations system. ECA provides identity + reporting line, Operations provides activity, Marketing system aggregates.</li>
+              </ol>
+            </div>
+          
           </div>
 
           <button class="mark-complete" data-section-mark="modul-eca">
@@ -2552,12 +2692,29 @@
             </div>
 
             <div data-lang-en="" style="display:none;">
-              <p>ESS is the <strong>primary front-end</strong> for 32,000 employees to access HR services independently. While ECA is used by 5-10 admins, ESS is used daily by every employee. ESS is highly visible: if ESS goes down, HR crisis is immediately apparent.</p>
-              <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full overview.</p></div>
+            <p>Frans BS Hutapea will stress-test with questions probing assumptions, data validity, and operational reality. Here are the 12 most likely to come up.</p>
+
+            <div class="card" style="border-left:4px solid var(--color-navy);">
+              <ol class="content-list">
+                <li><strong>"What is data accuracy at baseline, and how do you measure progress to 99.5%?"</strong> Baseline currently estimated 85-90% (legacy systems). Methodology: random sampling 5% records monthly, manual verification against source documents, error rate calculated. Goal Phase 1: 95%, Phase 2: 97%, Phase 3: 99.5%. Reported in monthly steering committee.</li>
+                <li><strong>"PII data security. GDPR/PDP compliance, how do we ensure?"</strong> Data classification: 4 tiers (Public, Internal, Confidential, Restricted). Field-level encryption for sensitive data (gaji, KTP, BPJS). Role-based access. Audit log all access. Annual penetration test. Compliance to Indonesia PDP Law + GDPR for foreign employees.</li>
+                <li><strong>"Onboarding time target &lt; 30 seconds for new hire. Realistic?"</strong> Yes, with prep: TA pushes complete profile to ECA via integration, auto-create employee profile, auto-trigger BPJS/NPWP/welcome workflow. Manual exception: foreign hires (visa requires manual intervention), &lt; 5 minutes.</li>
+                <li><strong>"What happens if ECA goes down? Impact to other modules?"</strong> 11 modules dependent. RTO Critical 2 hours. Backup: data replication multi-region, automatic failover. Degraded mode: read-only access for non-critical operations, queue write operations. Comp&amp;Ben payroll uses last-known-good snapshot.</li>
+                <li><strong>"Multi-country compliance changes mid-year. How do we handle?"</strong> Country compliance team monitors regulatory changes. Annual review + ad-hoc for major changes. ECA configurable: statutory rules, contribution rates, leave entitlement per country. Update tested in sandbox first, deployed with rollback plan.</li>
+                <li><strong>"EOR vendor like Deel, Remote, what if they go bankrupt or quit Nabati?"</strong> Multi-vendor strategy: 2 EOR providers per region. Contract has data portability clause. Employee profile in ECA stays intact regardless of EOR provider. Migration plan: 90 days for handover.</li>
+                <li><strong>"Bulk operations with rollback. What's the worst-case scenario?"</strong> Worst-case: bulk update 32K employees, executed at wrong time. Mitigation: 4-eye approval, dry-run mandatory, batch limit 5K, automated rollback if anomaly &gt; 5%. Audit trail enables forensic and reversal within 24 hours.</li>
+                <li><strong>"OCR accuracy. Vendor claim 95%, validated or not?"</strong> Currently piloted for KTP only, 92% accuracy. For other documents (passport, bank statement) under testing. Validation: random sampling 100 docs/week, manual verification. Accuracy gap escalated to vendor for model retraining.</li>
+                <li><strong>"Data migration from legacy. How long, how risky?"</strong> Phased migration. Phase 1 (Wave 1) October 2026: 10K employees Indonesia. Phase 2 December 2026: +10K employees other ASEAN countries. Phase 3 February 2027: remaining. Per phase: data cleansing, mapping, dry-run, parallel run 30 days, sign-off, cutover.</li>
+                <li><strong>"HC AI conversational data updates. Realistic for factory operators?"</strong> Voice interface in 8+ languages including Bahasa Indonesia. UAT shows acceptable accuracy. For low-literacy operators: voice + button-based UI fallback. Buddy system: peer support for first 30 days.</li>
+                <li><strong>"Cost center allocation. SAP sync issue, how often, how to handle?"</strong> Sync schedule: daily batch + real-time for changes. Sync error rate currently &lt; 0.1%. Reconciliation report monthly. Variance &gt; 0.5% escalates to Finance + ECA team. Manual reconciliation if needed.</li>
+                <li><strong>"Tier-based access for self-service. What if employee complains they cannot edit field X?"</strong> Tier matrix is documented &amp; communicated. Common complaint: salary, bank, contract. These are "approval required" by design (fraud prevention). Communication: clear messaging in UI explaining why approval is needed. Audit log shows requestor.</li>
+              </ol>
             </div>
+          
           </div>
 
-          <h3 class="section-h3" id="ess-fitur" data-lang-id="">Fitur Utama (50+ Functional Requirements dalam 13 area)</h3>
+          <span id="ess-fitur" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Fitur Utama (50+ Functional Requirements dalam 13 area)</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Key Features (50+ FRs across 13 areas)</h3>
           <div data-lang-id="">
             <p>Modul ESS punya 50+ Functional Requirements yang dikelompokkan dalam 13 area fungsional. Fitur paling banyak di Time & Attendance dan Leave Management karena ini transaksi paling sering.</p>
@@ -2670,10 +2827,60 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full feature breakdown.</p></div>
+            <p>5 questions to check understanding of the ECA module. Answer all, then click <em>Check Answers</em>. Score &lt; 4 means re-read the section.</p>
+
+            <div class="quiz-container" data-quiz="eca-en">
+              <div class="quiz-question" data-q="1">
+                <p><strong>1.</strong> How many fields does ECA manage in the employee profile, across how many categories?</p>
+                <label class="quiz-option"><input type="radio" name="eca-en-q1" value="a"> a. 100+ fields in 5 categories</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q1" value="b"> b. 250+ fields in 11 categories</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q1" value="c"> c. 500+ fields in 20 categories</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q1" value="d"> d. 50 fields in 3 categories</label>
+              </div>
+
+              <div class="quiz-question" data-q="2">
+                <p><strong>2.</strong> To hire an employee in Vietnam where Nabati has no legal entity, what feature is used?</p>
+                <label class="quiz-option"><input type="radio" name="eca-en-q2" value="a"> a. Direct Hire</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q2" value="b"> b. EOR (Employer of Record)</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q2" value="c"> c. Contractor Classification</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q2" value="d"> d. Internal Transfer</label>
+              </div>
+
+              <div class="quiz-question" data-q="3">
+                <p><strong>3.</strong> An employee wants to update their bank account for payroll. What access tier applies?</p>
+                <label class="quiz-option"><input type="radio" name="eca-en-q3" value="a"> a. Direct edit, no approval</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q3" value="b"> b. Approval required (document verification)</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q3" value="c"> c. Read-only, only HR Director can change</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q3" value="d"> d. Employee cannot request changes</label>
+              </div>
+
+              <div class="quiz-question" data-q="4">
+                <p><strong>4.</strong> HC AI detects a 77% salary drop during data update. What does the system do?</p>
+                <label class="quiz-option"><input type="radio" name="eca-en-q4" value="a"> a. Auto-approve since admin entered it</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q4" value="b"> b. Reject automatically</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q4" value="c"> c. Flag as potential typo, request confirmation</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q4" value="d"> d. No validation, manual check</label>
+              </div>
+
+              <div class="quiz-question" data-q="5">
+                <p><strong>5.</strong> Which is NOT one of the main lifecycle events in ECA?</p>
+                <label class="quiz-option"><input type="radio" name="eca-en-q5" value="a"> a. Hire/Onboarding</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q5" value="b"> b. Internal Transfer</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q5" value="c"> c. Performance Goal Setting</label>
+                <label class="quiz-option"><input type="radio" name="eca-en-q5" value="d"> d. Termination/Offboarding</label>
+              </div>
+
+              <button class="quiz-submit" data-quiz-key="eca-en" data-answers='{"1":"b","2":"b","3":"b","4":"c","5":"c"}'>
+                Check Answers
+              </button>
+
+              <div class="quiz-result" data-quiz-result="eca-en" style="display:none;"></div>
+            </div>
+          
           </div>
 
-          <h3 class="section-h3" id="ess-workflow" data-lang-id="">Detailed Workflow</h3>
+          <span id="ess-workflow" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Detailed Workflow</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Detailed Workflow</h3>
           <div data-lang-id="">
             <p>Workflow ESS terbagi dalam 7 sections berisi 13 sub-workflow. Untuk admin ESS, fokus pada Time & Attendance (Section 1), Leave Management (Section 2), dan Help Desk (Section 6).</p>
@@ -2781,10 +2988,29 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full workflow descriptions.</p></div>
+          <div data-lang-en="" style="display:none;">
+            <p>The ESS Detailed Workflow describes 7 main flow sections, covering 13 sub-workflows that connect employee front-end interactions to back-end systems (ECA, Payroll, LMS, POS, SAP/ERP).</p>
+
+            <div class="card">
+              <h4 class="section-h4">7 Workflow Sections</h4>
+              <ol class="content-list">
+                <li><strong>Login & Authentication.</strong> SSO, multi-factor, biometric, fallback PIN. Session management. Tenant isolation per country entity.</li>
+                <li><strong>Personal Profile & Document Management.</strong> View profile, update self-service fields (Tier 1), submit approval-required changes (Tier 2 like address, bank account), document upload, OCR auto-extract.</li>
+                <li><strong>Time & Attendance.</strong> Clock-in/out via mobile (GPS + face recognition + geofence), shift roster view, shift swap request, OT submission per Indonesian Labor Law 13/2003 and per-country regulations, offline sync.</li>
+                <li><strong>Leave Management.</strong> 25+ leave types across 9 countries, multi-level approval, accrual rules, carry-forward, encashment, blackout periods, delegation when manager unavailable.</li>
+                <li><strong>Compensation & Benefits Self-Service.</strong> Payslip access, tax calculator, claim reimbursement (medical, transport, meals), salary advance, sharia loan options (Qard Hasan 0% interest, Murabahah buy-sell structure), POS integration for retail/F&B (Richeese Factory).</li>
+                <li><strong>Manager Self-Service (MSS).</strong> Approval queue (multi-channel notification), team dashboard (attendance pattern, leave balance, performance), 1-tap approve, manager scorecard, delegation setup.</li>
+                <li><strong>HC AI Conversational Layer.</strong> Single unified AI agent serving 8+ languages, 90%+ resolution rate target, contextual responses per persona, escalation to human when needed, knowledge base continuous learning.</li>
+              </ol>
+            </div>
+
+            <div class="card card-quiet">
+              <p><strong>Note:</strong> 13 sub-workflows are detailed in the original Detailed Workflow document on Google Drive. This material focuses on the conceptual structure that ESS admin (Aurel) must understand for one-on-one mentoring.</p>
+            </div>
           </div>
 
-          <h3 class="section-h3" id="ess-persiapan" data-lang-id="">Persiapan Admin</h3>
+          <span id="ess-persiapan" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Persiapan Admin</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Admin Preparation</h3>
           <div data-lang-id="">
             <p>Persiapan Aurel sebagai admin ESS punya 3 lapisan: <strong>persiapan teknis</strong> (knowledge base, mapping policy), <strong>persiapan operasional</strong> (SOP, monitoring), dan <strong>persiapan komunikasi</strong> (training material, change management).</p>
@@ -2842,10 +3068,62 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full preparation checklist.</p></div>
+            <p>Aurel's preparation as ESS admin has 3 layers: <strong>technical preparation</strong> (knowledge base, policy mapping), <strong>operational preparation</strong> (SOP, monitoring), and <strong>communication preparation</strong> (training material, change management).</p>
+
+            <div class="accordion" data-open="true">
+              <button class="accordion-header"><h4>Technical Preparation (before go-live)</h4>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                <ul class="content-list">
+                  <li><strong>HC AI knowledge base ready.</strong> All routine FAQs (leave, payslip, profile updates, documents) populated, tested at 90%+ resolution rate, translated to 8+ languages.</li>
+                  <li><strong>Leave policy mapping per country.</strong> 25+ leave types across 9 countries. Indonesia: menstrual leave 2 days/month, Hajj once per employment. Malaysia: tenure-based 8/12/16 days. China: provincial maternity 98-158 days. Each country's specifics must be accurate in the system.</li>
+                  <li><strong>OT rate configuration per country.</strong> Indonesia tiered (1.5x first hr, 2x next, 2x weekend, 3x holiday) per Labor Law 13/2003. Malaysia threshold-based. China 36h/month cap. Misconfiguration means wrong payslips.</li>
+                  <li><strong>Holiday calendar 9 countries.</strong> Public holidays per region (Malaysia varies by state). Religious holidays. Company-specific holidays. Sync to leave calendar and attendance system.</li>
+                  <li><strong>Approval matrix per request type.</strong> Leave: single-level for &lt;5 days, multi-level for &gt;5 days or cross-team impact. Claim: auto-approve under Rp 100K, manual for higher. Document letters: HR Director for salary cert, manager for employment verification.</li>
+                  <li><strong>Mobile app distribution plan.</strong> iOS App Store, Google Play. MDM (Mobile Device Management) if available. QR code for download. 5-minute walkthrough onboarding.</li>
+                  <li><strong>Geofence configuration per worksite.</strong> 9 countries x many locations. GPS polygon for each factory, office, warehouse. WiFi SSID. Cell tower ID. Geofence radius (typically 100m).</li>
+                  <li><strong>Biometric enrollment plan.</strong> How are 32K employees enrolled with face templates? Per-shift, per-batch, or staggered. Hardware (employee smartphone or provided). Liveness detection working.</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="accordion" data-open="false">
+              <button class="accordion-header"><h4>Operational Preparation (daily routine)</h4>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                <ul class="content-list">
+                  <li><strong>SOP for tier-1 ticket handling.</strong> Define clearly: when to resolve yourself, when to escalate to specialists (Comp&Ben for payslip disputes, IR for leave disputes, etc.).</li>
+                  <li><strong>Daily adoption monitoring dashboard.</strong> DAU, MAU, transaction completion rate, HC AI resolution rate, support ticket volume. Target: DAU 60%+, HC AI resolution 90%+, ticket reduction 80% vs legacy.</li>
+                  <li><strong>SLA monitoring.</strong> Critical 30 min, High 2 hours, Medium-Low 4 hours. Auto-escalation if overdue. Daily report to HR Manager.</li>
+                  <li><strong>Notification template per category.</strong> Leave approved/rejected, payslip available, document ready, training due, contract renewal. Local language matched to entity.</li>
+                  <li><strong>Knowledge gap tracking.</strong> Which topics get escalated most. Monthly review with HR Operations to fill gaps.</li>
+                  <li><strong>List of manager troubleshooter PIC per BU.</strong> Manager assigned to help peer managers if they have issues with approval queues, dashboards, or notifications.</li>
+                  <li><strong>Escalation contacts per country.</strong> Country HR Lead, Payroll Specialist, IT Support, IR Specialist. For escalating regulation-specific cases or payroll errors.</li>
+                </ul>
+              </div></div>
+            </div>
+
+            <div class="accordion" data-open="false">
+              <button class="accordion-header"><h4>Communication & Change Management Preparation</h4>
+                <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="accordion-body"><div class="accordion-content">
+                <ul class="content-list">
+                  <li><strong>Training material for Managers (MSS).</strong> Manager Self-Service module is often the bottleneck. Managers need to understand approval queue, team dashboard, mobile app. Video tutorials per feature in 8 languages.</li>
+                  <li><strong>Ready-to-use FAQ library for HC AI.</strong> Local language, contextual to entity, regularly updated.</li>
+                  <li><strong>Launch communication to 32K employees.</strong> Email blast, factory posters, short video (60 seconds) per persona. Local language. Demo of main flows (clock-in, request leave, access payslip).</li>
+                  <li><strong>Onboarding flow for new hires.</strong> New employees must complete ESS onboarding in &lt;30 minutes without HR assistance. Buddy system, video, walkthrough.</li>
+                  <li><strong>Privacy communication.</strong> Employees will submit biometric, GPS, photos. Clear communication about data usage, GDPR/PDP compliance, opt-out where applicable.</li>
+                  <li><strong>Sharia loan communication.</strong> Muslim employees should know Qard Hasan and Murabahah options exist. Coordination with Koperasi Syariah for SLA.</li>
+                </ul>
+              </div></div>
+            </div>
           </div>
 
-          <h3 class="section-h3" id="ess-faq-user" data-lang-id="">FAQ dari Karyawan ke Admin ESS</h3>
+          <span id="ess-faq-user" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">FAQ dari Karyawan ke Admin ESS</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">FAQ from Employees to ESS Admin</h3>
           <div data-lang-id="">
             <p>15 pertanyaan paling sering muncul dari karyawan. Mayoritas seharusnya bisa di-resolve oleh HC AI. Yang sampai ke Aurel biasanya yang HC AI tidak bisa handle atau yang karyawan request manusia.</p>
@@ -2872,10 +3150,30 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full FAQ.</p></div>
-          </div>
+            <p>15 most frequent employee questions. Most should be resolvable by HC AI. Those reaching Aurel are typically what HC AI cannot handle or where employees specifically request human assistance.</p>
 
-          <h3 class="section-h3" id="ess-faq-hc" data-lang-id="">FAQ dari HC Function lain</h3>
+            <div class="card">
+              <ol class="content-list">
+                <li><strong>"My leave request was submitted 3 days ago, why no approval yet?"</strong> Check manager approval queue, possibly the manager hasn't opened the notification or is traveling. Auto-escalation should kick in after X hours (configurable). If past SLA, manually escalate to skip-level manager.</li>
+                <li><strong>"My leave balance in the system differs from my own records, why?"</strong> Check: (1) accrual rules per country are correct, (2) pending leaves may reduce visible balance, (3) prior-year carry-forward might not be credited yet. Show accrual history to the employee for transparency.</li>
+                <li><strong>"I forgot my ESS password, how do I reset?"</strong> Self-service password reset via email or SMS OTP. If work email is also forgotten, escalate to IT Help Desk. Password management is typically handled by HC AI.</li>
+                <li><strong>"My mobile app errors during clock-in, screenshot attached, please help."</strong> Check: (1) app version up to date, (2) GPS active, (3) employee within geofence, (4) face recognition lighting issues. Submit alternative clock-in via QR or supervisor override while troubleshooting.</li>
+                <li><strong>"I want to update my payroll bank account, in ESS or via HC?"</strong> Bank account falls under "approval required" tier for fraud prevention. Employee submits request via ESS, HR/Finance verifies with supporting documents (bank statement), then updates.</li>
+                <li><strong>"This month's payslip is not showing yet?"</strong> Check: (1) payroll cycle has run, (2) ESS-Payroll integration sync errors, (3) employee status still active. For payslip number issues, escalate to Comp&Ben.</li>
+                <li><strong>"I need an employment verification letter for visa application, what's the process?"</strong> Self-service via Document Center > Request Letter > Employment Verification. Auto-generated from template, routed to HR Director for digital signature. Target turnaround 2 hours.</li>
+                <li><strong>"I submitted a medical reimbursement claim with receipt uploaded, why still pending?"</strong> Check: (1) employee policy limit remaining, (2) claim category valid, (3) Finance policy review for amount above threshold. OCR may extract data incorrectly, ask employee to verify amount/vendor.</li>
+                <li><strong>"My team has a resigning employee, how does exit clearance work in ESS?"</strong> Resignation enters offboarding workflow which ECA handles. But on the employee's ESS side, they can check clearance progress, asset return checklist, exit interview link.</li>
+                <li><strong>"My manager is on leave and I need emergency leave approval today, how?"</strong> Approval delegation feature: manager sets delegate before leave. If no delegate, automatic escalation to skip-level manager after X hours. For emergencies, contact HC with documentation.</li>
+                <li><strong>"Why can't I request leave on date X, system says blackout period?"</strong> Blackout periods are configured by HR for peak business periods (fiscal year-end, Lebaran for operations critical, etc.). For emergencies, exception workflow exists requiring special approval.</li>
+                <li><strong>"I used local language voice command, HC AI didn't understand, what to do?"</strong> Check supported languages: Bahasa Indonesia, English, Mandarin, Malay, Thai, Vietnamese, Arabic, Hindi. For accent issues, suggest text input. Report to knowledge base team for improvement.</li>
+                <li><strong>"I want to apply for an employee loan, is there a sharia option?"</strong> Yes. Qard Hasan (0% interest loan) and Murabahah (sharia-compliant buy-sell structure) are available. For larger amounts, coordinate with Koperasi Syariah.</li>
+                <li><strong>"I'm transferring from Indonesia to Malaysia, when does my ESS migrate?"</strong> Cross-border transfer is handled by ECA workflow. ESS auto-reconfigures: default language changes, new holiday calendar, new leave entitlement, payslips appear in new currency. Timeline typically aligns with effective transfer date.</li>
+                <li><strong>"I'm a shift worker at the factory with unstable internet, how do I clock-in?"</strong> Mobile app has offline mode. Clock events store locally, auto-sync when connectivity returns. Visual indicator shows offline status. Backup: physical biometric device at factory entry.</li>
+              </ol>
+            </div>
+          </div>
+          <span id="ess-faq-hc" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">FAQ dari HC Function lain</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">FAQ from Other HC Functions</h3>
           <div data-lang-id="">
             <p>Pertanyaan dari rekan HC Function lain biasanya bersifat operational coordination atau data integration.</p>
@@ -2896,10 +3194,25 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full FAQ.</p></div>
+            <p>Questions from other HC Function colleagues are typically operational coordination or data integration.</p>
+            <div class="card">
+              <ol class="content-list">
+                <li><strong>Comp&Ben Team:</strong> "Many employees complain payslip is slow to appear in ESS, what's wrong?" Check ESS-Payroll sync integration. Possibly overnight batch delay or sync error. Provide log timestamp for forensics.</li>
+                <li><strong>Performance Team:</strong> "Goal setting cycle is open in ESS, what's the adoption rate?" Pull analytics dashboard: % employees with goals set, breakdown per BU, daily trend. If low, trigger reminder campaign.</li>
+                <li><strong>LMS Team:</strong> "Why doesn't course link appear in employee ESS dashboard?" Check: (1) LMS-ESS sync integration error, (2) auto-enrollment rules don't match employee, (3) course availability per region.</li>
+                <li><strong>IR Team:</strong> "An employee submitted leave with suspicious-looking documents. What's the verification process in ESS?" Approval workflow has flagging for incomplete documents. IR can request additional verification or direct rejection with clear reason.</li>
+                <li><strong>TA Team:</strong> "Is the ESS onboarding flow for May new hires running?" Check: (1) TA-ECA-ESS pipeline integration smooth, (2) employee profile loaded, (3) ESS account created, (4) buddy assignment running. Target onboarding complete in first 30 minutes.</li>
+                <li><strong>OD Team:</strong> "Org chart in ESS hasn't reflected yesterday's restructuring." Check refresh cycle of org structure from OD module to ESS. Sync may not have run, or effective date not yet reached.</li>
+                <li><strong>Career Management Team:</strong> "Internal job posting doesn't appear for certain employees in ESS, why?" Visibility rules: posting can be restricted by entity, job family, or grade. Check if employee matches criteria.</li>
+                <li><strong>Comp&Ben Team (again):</strong> "Employee complains leave balance differs between payslip and ESS." Source of truth: ESS leave balance. Payslip slip may use older snapshot data. Coordinate for single source.</li>
+                <li><strong>Industrial Relations Team:</strong> "An employee submitted grievance via ESS, how is confidentiality maintained?" Grievance workflow encrypted, restricted access (only IR specialist + HR Director). Audit trail maintained. Employee gets status update without exposing details.</li>
+                <li><strong>People Analytics Team:</strong> "I need Q1 attendance pattern data for analytics, can I pull from ESS?" Yes, API or report builder available. Define data points needed, sync schedule, and privacy considerations.</li>
+              </ol>
+            </div>
           </div>
 
-          <h3 class="section-h3" id="ess-faq-bu" data-lang-id="">FAQ dari Business Unit</h3>
+          <span id="ess-faq-bu" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">FAQ dari Business Unit</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">FAQ from Business Units</h3>
           <div data-lang-id="">
             <p>Pertanyaan dari unit bisnis non-HC. Fokusnya biasanya di operasional, financial, atau visibility data tim.</p>
@@ -2918,10 +3231,23 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full FAQ.</p></div>
+            <p>Questions from non-HC business units. Focus is typically on operations, finance, or team data visibility.</p>
+            <div class="card">
+              <ol class="content-list">
+                <li><strong>Factory Operations Manager:</strong> "I need a real-time dashboard for production line staffing. Can I use ESS clock-in data?" Yes. ESS attendance data can feed operations dashboards. Define refresh interval (real-time, 15 min, hourly), data fields, and access control.</li>
+                <li><strong>Finance Director:</strong> "How can we track cost center allocation in real-time from attendance data?" Attendance events have cost center tags syncing to ECA. Aggregated daily, weekly, monthly. For multi-project allocation, timesheet workflow exists.</li>
+                <li><strong>Sales Director:</strong> "Our field sales travel a lot, is GPS clock-in accurate enough?" GPS location precision 10-50m. For customer visit validation: geofence at customer location, plus photo verification. Accuracy sufficient for attendance, not for sensitive location audit detail.</li>
+                <li><strong>Logistics Manager:</strong> "Our drivers are often offline in rural areas, how does clock-in work?" Mobile app offline mode stores events locally, syncs when connectivity returns. Geofence allowed at delivery hub. Backup: SMS-based clock-in or supervisor confirmation.</li>
+                <li><strong>Quality Assurance:</strong> "I need quarterly training compliance tracking per quarter for ISO audit." LMS-ESS integration stores completion records. Automatic reports can be generated per BU, per training type, per period. Audit trail preserved 7 years (compliance retention).</li>
+                <li><strong>Marketing Manager:</strong> "Field marketing uses a separate app, can it integrate with ESS for attendance?" Integration API available. Define: data fields (clock-in time, location, customer), authentication (SSO or token), sync frequency. Implementation needs IT coordination.</li>
+                <li><strong>BU IT Lead:</strong> "ESS uses many integrations (POS, Payroll, LMS). What if one goes down?" Architecture has circuit breaker pattern. If dependent system is down, ESS remains functional in degraded mode (data cache, queue requests). Auto-recovery when system is back. SLA per integration is defined.</li>
+                <li><strong>Production Director:</strong> "I need daily shift compliance data: how many employees clock-in on time, late, absent." Real-time dashboard available in ESS Manager view. Filterable per shift, per line, per supervisor. Notifications triggered on threshold breach.</li>
+              </ol>
+            </div>
           </div>
 
-          <h3 class="section-h3" id="ess-cpo" data-lang-id="">Anticipated Questions dari CPO Frans BS Hutapea</h3>
+          <span id="ess-cpo" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Anticipated Questions dari CPO Frans BS Hutapea</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Anticipated Questions from CPO Frans BS Hutapea</h3>
           <div data-lang-id="">
             <p>Frans BS Hutapea akan stress-test dengan pertanyaan yang menggali asumsi, validasi data, dan operational reality. Berikut 12 pertanyaan paling mungkin keluar.</p>
@@ -2945,10 +3271,28 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full anticipated questions.</p></div>
+            <p>Frans BS Hutapea will stress-test with questions that probe assumptions, validate data, and operational reality. Here are 12 most likely questions to come.</p>
+
+            <div class="card" style="border-left:4px solid var(--color-navy);">
+              <ol class="content-list">
+                <li><strong>"Which adoption metrics do you track? DAU/MAU baselined?"</strong> Daily and Monthly Active Users measurable in system. Baseline set at Phase 1 go-live, Phase 2 target: DAU 60%+, MAU 85%+. Breakdown per persona (Frontline, Knowledge worker, Manager, HR) to identify gaps.</li>
+                <li><strong>"You claim 80% reduction in support tickets, what's the calculation basis?"</strong> Current baseline: estimated 2,000 tickets/month (legacy system). Target: at most 400 tickets/month. Cost per ticket avg Rp 50K (HC time, escalation cost). Saving: 1,600 x Rp 50K = Rp 80M/month = Rp 960M/year. Plus employee productivity gain from faster resolution.</li>
+                <li><strong>"What mobile app SLA uptime do you commit to? Consequences if breached?"</strong> SLA 99.9% (at most 8.76 hours downtime/year). Vendor commits with penalty clause. Internal monitoring 24/7. Incident response 15 min for critical issue. Rollback plan exists for failed deployment.</li>
+                <li><strong>"Realistically, factory employees in Vietnam use older Android smartphones. Will the mobile app run?"</strong> Compatibility matrix: Android 8.0+, iOS 13+. Minimum specs documented. For older devices: progressive web app fallback, or dedicated kiosk at factory entry. Field testing done at sample factories.</li>
+                <li><strong>"Biometric face recognition for 32K people. Privacy concern? GDPR/PDP compliance?"</strong> Face template stored as mathematical hash (512-dim vector), not photo. Encrypted at rest and in transit. Employees explicitly consent at enrollment, opt-out available (alternative: PIN+ID card). GDPR/PDP compliant. Annual security audit.</li>
+                <li><strong>"Fraud detection in mobile attendance. What's the false positive rate?"</strong> Multi-factor authentication: GPS + face + device fingerprint + behavior pattern. False positive currently at most 2% (industry benchmark 5-10%). False negative (fraud passing through) at most 0.5%. Continuous learning improvement. Manual review queue for edge cases.</li>
+                <li><strong>"HC AI 90% resolution rate, validated or vendor claim?"</strong> Current vendor claim 85%, target 90% after knowledge base tuning 6 months post-launch. Validation method: random sampling 5% of interactions per week, manual quality check. Reported in monthly steering committee.</li>
+                <li><strong>"Sharia loan option. What adoption rate is expected? Worth the integration cost?"</strong> Estimate 60% Indonesian Muslim employees. Internal survey shows 30%+ interest in sharia loan if available. Conservative target: 1,500 active loans first year. Operational integration cost to Koperasi Syariah relatively low (existing partnership). Brand value reinforcement.</li>
+                <li><strong>"8 languages. Professional translation or machine translation quality?"</strong> Professional translation for core UX (menu, button, key flows) with in-country review. Knowledge base FAQ: hybrid (machine + post-edit). Voice input: native voice recognition per language. Quality check: native speaker UAT per region.</li>
+                <li><strong>"Manager Self-Service. Managers often don't check email, how about approval velocity?"</strong> Multi-channel notification: app push, email, WhatsApp, Teams. Auto-escalation if overdue. Dashboard summary (red dot on pending items). Mobile-optimized approval flow (1-tap approve for simple requests). Manager performance scorecard tracking responsiveness.</li>
+                <li><strong>"Change management plan for 32K employees? Not all are tech-savvy."</strong> Phased rollout. Per-persona training material (video, poster, quick guide) in local language. Buddy system: super-user per BU. Floor walkers at go-live (HR walking around to help). 24/7 hotline first 30 days. Adoption bonus for early-adopter teams.</li>
+                <li><strong>"If go-live failure, what's the rollback plan?"</strong> Phased rollout per Wave (not big-bang). Each Wave has go/no-go criteria. Rollback procedure tested. Legacy system maintained parallel for 90 days Phase 1, 60 days Phase 2, 30 days Phase 3. Daily data backup. Communication template ready for rollback scenario.</li>
+              </ol>
+            </div>
           </div>
 
-          <h3 class="section-h3" id="ess-quiz" data-lang-id="">Self-Check Quiz</h3>
+          <span id="ess-quiz" class="anchor-target" aria-hidden="true"></span>
+          <h3 class="section-h3" data-lang-id="">Self-Check Quiz</h3>
           <h3 class="section-h3" data-lang-en="" style="display:none;">Self-Check Quiz</h3>
           <div data-lang-id="">
             <p>5 soal untuk cek pemahaman modul ESS. Jawab semua, lalu klik <em>Cek Jawaban</em>. Skor &lt;4 berarti perlu baca ulang sectionnya.</p>
@@ -3003,7 +3347,55 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for the quiz.</p></div>
+            <p>5 questions to check your understanding of ESS module. Answer all, then click <em>Check Answers</em>. Score &lt;4 means re-read the section.</p>
+
+            <div class="quiz-container" data-quiz="ess-en">
+              <div class="quiz-question" data-q="1">
+                <p><strong>1.</strong> What is the target HC AI Resolution Rate for ESS inquiries?</p>
+                <label class="quiz-option"><input type="radio" name="ess-en-q1" value="a"> a. 50% inquiries</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q1" value="b"> b. 70% inquiries</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q1" value="c"> c. 90% inquiries</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q1" value="d"> d. 100% inquiries (full automation)</label>
+              </div>
+
+              <div class="quiz-question" data-q="2">
+                <p><strong>2.</strong> Mobile attendance uses face recognition. What dimension face template is stored?</p>
+                <label class="quiz-option"><input type="radio" name="ess-en-q2" value="a"> a. 128-dim (basic)</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q2" value="b"> b. 256-dim (standard)</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q2" value="c"> c. 512-dim (enterprise grade)</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q2" value="d"> d. Photo stored directly, not hashed</label>
+              </div>
+
+              <div class="quiz-question" data-q="3">
+                <p><strong>3.</strong> OT calculation Indonesia per Labor Law 13/2003. Which is CORRECT?</p>
+                <label class="quiz-option"><input type="radio" name="ess-en-q3" value="a"> a. Flat rate 1.5x for all OT hours</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q3" value="b"> b. 1.5x first hour, 2x next, 2x weekend, 3x holiday</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q3" value="c"> c. No OT for fixed salary</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q3" value="d"> d. Case-by-case negotiation</label>
+              </div>
+
+              <div class="quiz-question" data-q="4">
+                <p><strong>4.</strong> A Muslim employee applies for an employee loan. Which sharia options are available?</p>
+                <label class="quiz-option"><input type="radio" name="ess-en-q4" value="a"> a. Only conventional loan with interest</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q4" value="b"> b. Qard Hasan (0% interest) and Murabahah (compliant buy-sell)</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q4" value="c"> c. Only Qard Hasan</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q4" value="d"> d. Loans entirely prohibited</label>
+              </div>
+
+              <div class="quiz-question" data-q="5">
+                <p><strong>5.</strong> Employee needs urgent leave when manager is traveling without delegation. What does the system do?</p>
+                <label class="quiz-option"><input type="radio" name="ess-en-q5" value="a"> a. Auto-reject request</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q5" value="b"> b. Pending until manager returns</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q5" value="c"> c. Auto-escalate to skip-level manager after X hours</label>
+                <label class="quiz-option"><input type="radio" name="ess-en-q5" value="d"> d. Auto-approve</label>
+              </div>
+
+              <button class="quiz-submit" data-quiz-key="ess-en" data-answers='{"1":"c","2":"c","3":"b","4":"b","5":"c"}'>
+                Check Answers
+              </button>
+
+              <div class="quiz-result" data-quiz-result="ess-en" style="display:none;"></div>
+            </div>
           </div>
 
           <button class="mark-complete" data-section-mark="modul-ess">
@@ -3063,7 +3455,40 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full glossary.</p></div>
+            <p>30 important terms in PRDs and Detailed Workflows. Memorize at least 20 terms as they will appear frequently in daily discussions.</p>
+
+            <div class="glossary-grid">
+              <div class="glossary-item"><strong>'ONE' GLOBAL HCMS</strong><span>Official name of Nabati's HCMS system. Always use single quotes around "ONE".</span></div>
+              <div class="glossary-item"><strong>HCMS</strong><span>Human Capital Management System. Suite of 12 integrated HC modules.</span></div>
+              <div class="glossary-item"><strong>ECA</strong><span>Employee Core Administration. Backbone module for employee data, single source of truth.</span></div>
+              <div class="glossary-item"><strong>ESS</strong><span>Employee Self-Service. Front-end for employees to access HR services independently.</span></div>
+              <div class="glossary-item"><strong>HC AI</strong><span>Single unified AI agent serving all HCMS modules. Not multiple separate agents.</span></div>
+              <div class="glossary-item"><strong>FR</strong><span>Functional Requirement. System functional need with unique code (e.g.: FR-ECA-DATA-001).</span></div>
+              <div class="glossary-item"><strong>NFR</strong><span>Non-Functional Requirement. Performance, security, scalability, usability targets.</span></div>
+              <div class="glossary-item"><strong>PRD</strong><span>Product Requirements Document. Formal definition of what must be built.</span></div>
+              <div class="glossary-item"><strong>RBAC</strong><span>Role-Based Access Control. System access based on roles, not individual users.</span></div>
+              <div class="glossary-item"><strong>EOR</strong><span>Employer of Record. Hire employees in countries without own legal entity (via Deel, Remote, etc.).</span></div>
+              <div class="glossary-item"><strong>BPJS</strong><span>Badan Penyelenggara Jaminan Sosial Indonesia. Mandatory statutory contribution (Kesehatan + Ketenagakerjaan).</span></div>
+              <div class="glossary-item"><strong>NPWP</strong><span>Indonesian Tax Identification Number. 15 digits. Mandatory for all taxable employees.</span></div>
+              <div class="glossary-item"><strong>KTP</strong><span>Kartu Tanda Penduduk. Indonesian National ID Number. 16 digits.</span></div>
+              <div class="glossary-item"><strong>OD</strong><span>Organization Design. Module for planning organizational structure and positions.</span></div>
+              <div class="glossary-item"><strong>OCR</strong><span>Optical Character Recognition. Auto-extract data from scan/photo of documents.</span></div>
+              <div class="glossary-item"><strong>Geofence</strong><span>GPS polygon or radius location for clock-in validation of employees.</span></div>
+              <div class="glossary-item"><strong>Accrual</strong><span>Accumulation of leave balance per period (monthly, yearly).</span></div>
+              <div class="glossary-item"><strong>Carry Forward</strong><span>Previous year's leave balance carried over to next year.</span></div>
+              <div class="glossary-item"><strong>Encashment</strong><span>Conversion of remaining leave balance to cash.</span></div>
+              <div class="glossary-item"><strong>Qard Hasan</strong><span>Sharia loan at 0% interest, charitable purpose. Repayment equals principal.</span></div>
+              <div class="glossary-item"><strong>Murabahah</strong><span>Sharia loan scheme based on buy-sell, compliant with Islamic principles.</span></div>
+              <div class="glossary-item"><strong>Koperasi Syariah</strong><span>Nabati partner for sharia employee loan products.</span></div>
+              <div class="glossary-item"><strong>Payslip</strong><span>Monthly salary slip, contains gross, deduction, statutory contributions, tax, net details.</span></div>
+              <div class="glossary-item"><strong>Tier (Data Access)</strong><span>Data control levels: Direct edit, Approval required, Read-only.</span></div>
+              <div class="glossary-item"><strong>Persona</strong><span>System user profile: Frontline, Knowledge Worker, Manager, HR.</span></div>
+              <div class="glossary-item"><strong>Single Source of Truth</strong><span>Concept of one master data as single reference. ECA serves this for employee data.</span></div>
+              <div class="glossary-item"><strong>Audit Trail</strong><span>Log of all data changes: who, when, from what value, to what value, reason.</span></div>
+              <div class="glossary-item"><strong>Lifecycle Event</strong><span>Employee career events: Hire, Transfer, Promotion, Termination, Rehire.</span></div>
+              <div class="glossary-item"><strong>Blackout Period</strong><span>Period when leave cannot be requested (e.g.: Lebaran for operations critical).</span></div>
+              <div class="glossary-item"><strong>Span of Control</strong><span>Number of direct reports per manager. Industry benchmark optimum 5-10.</span></div>
+            </div>
           </div>
 
           <button class="mark-complete" data-section-mark="glosarium">
@@ -3137,7 +3562,54 @@
           </div>
 
           <div data-lang-en="" style="display:none;">
-            <div class="card card-quiet"><p style="font-style:italic;color:var(--color-gray-text);">Switch to Indonesian for full readiness checklist.</p></div>
+            <p>20 readiness items that must be checked before Wave 1 go-live (October 2026). Status auto-saved in browser.</p>
+
+            <div class="checklist-container">
+              <div class="checklist-group">
+                <h4 class="section-h4">A. Data & Configuration Readiness (5 items)</h4>
+                <label class="checklist-item"><input type="checkbox" data-check="c1en"> Master data of 32K employees migrated from legacy to ECA, accuracy at least 99.5%.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c2en"> Holiday calendar 9 countries loaded with public/religious/company holidays for 2026-2027.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c3en"> OT rate per country configured per regulation (Labor Law 13/2003 for Indonesia, EA 1955 Malaysia, etc.).</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c4en"> Approval matrix per request type (leave, claim, document letter) signed off by CPO.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c5en"> Geofence configuration for all worksites (factory, office, warehouse) validated.</label>
+              </div>
+
+              <div class="checklist-group">
+                <h4 class="section-h4">B. System & Integration Readiness (5 items)</h4>
+                <label class="checklist-item"><input type="checkbox" data-check="c6en"> ECA-SAP/ERP bidirectional sync tested for cost center, position, lifecycle events.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c7en"> ESS-Payroll integration tested, payslip generation automated end-to-end.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c8en"> Mobile app (iOS + Android) published, latest version available on App Store and Play Store.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c9en"> HC AI knowledge base loaded with at least 500 FAQ entries in 8 languages, validated 90%+ resolution rate in sandbox.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c10en"> Biometric face recognition enrollment plan finalized, hardware/smartphone compatibility validated.</label>
+              </div>
+
+              <div class="checklist-group">
+                <h4 class="section-h4">C. Operational & SLA Readiness (5 items)</h4>
+                <label class="checklist-item"><input type="checkbox" data-check="c11en"> SOP for tier-1, tier-2, tier-3 ticket handling documented and trained to admin team.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c12en"> SLA monitoring dashboard (critical 30 min, high 2 hr, medium-low 4 hr) live and auto-escalation tested.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c13en"> List of manager troubleshooter PIC per BU (32+ BUs) appointed and briefed.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c14en"> Escalation contacts per country (Country HR Lead, Payroll, IR, IT) updated and available 24/7 for go-live week.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c15en"> Backup and rollback procedure tested, RTO at most 4 hours, RPO at most 1 hour.</label>
+              </div>
+
+              <div class="checklist-group">
+                <h4 class="section-h4">D. Communication & Change Management Readiness (5 items)</h4>
+                <label class="checklist-item"><input type="checkbox" data-check="c16en"> Training material (60-second video tutorials per feature) available in 8 languages.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c17en"> New hire onboarding flow tested (target complete in first 30 minutes without HR assistance).</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c18en"> Buddy system per BU established (super-user/floor walker per 100 employees).</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c19en"> Launch communication to 32K employees: email blast, factory poster, video announcement from CPO Frans BS Hutapea.</label>
+                <label class="checklist-item"><input type="checkbox" data-check="c20en"> 24/7 hotline and WhatsApp support channel active for first 30 days post-launch.</label>
+              </div>
+
+              <div class="checklist-summary card">
+                <div class="checklist-progress">
+                  <strong>Readiness progress:</strong>
+                  <span class="checklist-count"><span id="checklistCountEn">0</span> / 20 items</span>
+                </div>
+                <div class="checklist-bar"><div class="checklist-bar-fill" id="checklistBarEn"></div></div>
+                <p class="checklist-note" id="checklistNoteEn">Start checking completed items. Status auto-saved.</p>
+              </div>
+            </div>
           </div>
 
           <button class="mark-complete" data-section-mark="checklist">
